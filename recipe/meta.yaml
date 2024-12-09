@@ -20,14 +20,14 @@ build:
     - gwpopulation_pipe_to_common_format=gwpopulation_pipe.common_format:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
     - python >=3.6
   run:
-    - astropy
+    - astropy-base
     - bilby >=1.0.4
     - bilby_pipe
     - deepdish
