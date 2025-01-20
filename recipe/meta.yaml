@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/gwpopulation_pipe-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/gwpopulation_pipe-{{ version }}.tar.gz
   sha256: 81224eac22d0472f18faf0a71da360f5feb9549876b095bc6e635ac076e44955
 
 build:
@@ -20,12 +20,12 @@ build:
     - gwpopulation_pipe_to_common_format=gwpopulation_pipe.common_format:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - astropy
     - bilby >=1.0.4
@@ -37,7 +37,7 @@ requirements:
     - h5py
     - matplotlib-base
     - numpy
-    - python >=3.6
+    - python >={{ python_min }}
     - scipy
     - tqdm
 
@@ -55,6 +55,7 @@ test:
     - gwpopulation_pipe_to_common_format --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://git.ligo.org/RatesAndPopulations/gwpopulation_pipe
