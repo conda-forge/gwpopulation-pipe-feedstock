@@ -1,5 +1,5 @@
 {% set name = "gwpopulation-pipe" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.1" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/gwpopulation_pipe-{{ version }}.tar.gz
-  sha256: 81224eac22d0472f18faf0a71da360f5feb9549876b095bc6e635ac076e44955
+  sha256: 7722d72a7867099efa0a72d1a3ab1806f8d6973faf6b3bd4a39c3e6d49a811d8
 
 build:
   entry_points:
@@ -21,7 +21,7 @@ build:
     - gwpopulation_pipe_to_common_format=gwpopulation_pipe.common_format:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
