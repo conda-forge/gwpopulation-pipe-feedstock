@@ -28,12 +28,12 @@ requirements:
     - python {{ python_min }}
   run:
     - astropy
-    - bilby >=1.0.4
+    - bilby >=2.3.0
     - bilby_pipe
     - deepdish
-    - dynesty >1.0.0
+    - dynesty >2.0.0
     - extension-helpers
-    - gwpopulation >=0.6.2
+    - gwpopulation >=1.1.0
     - h5py
     - matplotlib-base
     - numpy
