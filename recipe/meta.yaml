@@ -25,21 +25,21 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.10
   run:
-    - astropy
-    - bilby >=1.0.4
+    - astropy-base
+    - bilby >=2.3.0
     - bilby_pipe
-    - deepdish
-    - dynesty >1.0.0
+    - dynesty >2.0.0
     - extension-helpers
-    - gwpopulation >=0.6.2
+    - gwpopulation >=1.1.0
     - h5py
     - matplotlib-base
     - numpy
-    - python >=3.6
+    - python >=3.10
     - scipy
     - tqdm
+    - wcosmo
 
 test:
   imports:
