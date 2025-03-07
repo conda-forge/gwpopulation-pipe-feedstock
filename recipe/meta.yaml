@@ -1,5 +1,6 @@
 {% set name = "gwpopulation-pipe" %}
 {% set version = "0.4.1" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -27,7 +28,7 @@ requirements:
     - setuptools
     - setuptools_scm
     - pip
-    - python >=3.10
+    - python {{ python_min }}
   run:
     - astropy-base
     - bilby >=2.3.0
@@ -38,7 +39,7 @@ requirements:
     - h5py
     - matplotlib-base
     - numpy
-    - python >=3.10
+    - python >={{ python_min }}
     - python-htcondor
     - scipy
     - tqdm
@@ -58,7 +59,9 @@ test:
     - gwpopulation_pipe_simulate_posteriors --help
     - gwpopulation_pipe_to_common_format --help
   requires:
+    - python {{ python_min }}
     - pip
+    - scipy <1.15
 
 about:
   home: https://git.ligo.org/RatesAndPopulations/gwpopulation_pipe
