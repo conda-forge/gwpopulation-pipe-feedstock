@@ -1,13 +1,14 @@
 {% set name = "gwpopulation-pipe" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.1" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/gwpopulation_pipe-{{ version }}.tar.gz
-  sha256: 81224eac22d0472f18faf0a71da360f5feb9549876b095bc6e635ac076e44955
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/gwpopulation_pipe-{{ version }}.tar.gz
+  sha256: 7722d72a7867099efa0a72d1a3ab1806f8d6973faf6b3bd4a39c3e6d49a811d8
 
 build:
   entry_points:
@@ -24,27 +25,31 @@ build:
 
 requirements:
   host:
+    - setuptools
+    - setuptools_scm
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
-    - astropy
-    - bilby >=1.0.4
-    - bilby_pipe
-    - deepdish
-    - dynesty >1.0.0
+    - astropy-base
+    - bilby >=2.3.0
+    - bilby_pipe >=1.3.0
+    - dynesty >2.0.0
     - extension-helpers
-    - gwpopulation >=0.6.2
+    - gwpopulation >=1.1.0
     - h5py
     - matplotlib-base
     - numpy
-    - python >=3.6
+    - python >={{ python_min }}
+    - python-htcondor
     - scipy
     - tqdm
+    - wcosmo
 
 test:
   imports:
     - gwpopulation_pipe
   commands:
+    - pip install popsummary
     - pip check
     - gwpopulation_pipe --help
     - gwpopulation_pipe_analysis --help
@@ -54,7 +59,9 @@ test:
     - gwpopulation_pipe_simulate_posteriors --help
     - gwpopulation_pipe_to_common_format --help
   requires:
+    - python {{ python_min }}
     - pip
+    - scipy <1.15
 
 about:
   home: https://git.ligo.org/RatesAndPopulations/gwpopulation_pipe
