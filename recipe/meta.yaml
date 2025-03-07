@@ -31,7 +31,7 @@ requirements:
   run:
     - astropy-base
     - bilby >=2.3.0
-    - bilby_pipe
+    - bilby_pipe >=1.4.0
     - dynesty >2.0.0
     - extension-helpers
     - gwpopulation >=1.1.0
