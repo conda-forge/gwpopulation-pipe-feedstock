@@ -24,6 +24,8 @@ build:
 
 requirements:
   host:
+    - setuptools
+    - setuptools_scm
     - pip
     - python >=3.10
   run:
