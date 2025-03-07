@@ -39,9 +39,12 @@ requirements:
     - matplotlib-base
     - numpy
     - python >=3.10
+    - python-htcondor
     - scipy
     - tqdm
     - wcosmo
+    - pip:
+      popsummary
 
 test:
   imports:
