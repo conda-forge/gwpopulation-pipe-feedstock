@@ -43,13 +43,12 @@ requirements:
     - scipy
     - tqdm
     - wcosmo
-    - pip:
-      popsummary
 
 test:
   imports:
     - gwpopulation_pipe
   commands:
+    - pip install popsummary
     - pip check
     - gwpopulation_pipe --help
     - gwpopulation_pipe_analysis --help
