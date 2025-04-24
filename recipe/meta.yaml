@@ -1,5 +1,5 @@
 {% set name = "gwpopulation-pipe" %}
-{% set version = "0.4.2" %}
+{% set version = "0.4.3" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/gwpopulation_pipe-{{ version }}.tar.gz
-  sha256: 66cb18a649e485c5239811ff9075111cc88f07b253a9ec6ac92a39cf26f7cd1f
+  sha256: 00d76ea762f3a229008e52a7d7bb58bfaeeb3ac8bea261b6099dfbe1f6b521ba
 
 build:
   entry_points:
